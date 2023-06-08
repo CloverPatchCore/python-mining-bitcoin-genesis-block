@@ -8,7 +8,7 @@ import sys
 VERSION = "01000000" #  set by the network
 PREV_BLOCK = "0000000000000000000000000000000000000000000000000000000000000000" # set by the network
 # Initial target - this is the easiest it will ever be to mine a Bitcoin block
-TARGET = '00000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF' # set by the network
+TARGET = '00FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF' # set by the network
 
 number_of_try = 0
 
@@ -20,17 +20,17 @@ def get_little_indian_from_decimal(nonce_decimal):
 
 def get_merkle_root():
     # this is calculated with the transactions
-    merkle_root = "3ba3edfd7a7b12b27ac72c3e67768f617fc81bc3888a51323a9fb8aa4b1e5e4a"
+    merkle_root = "3c6caca39124d44cbf90105c6ea52771d68735202987eb0a993fea516c633b78"
     return merkle_root
 
 def get_timestamp():
     # this is your current timestamp
-    timestamp = "29ab5f49" # bigIndian: 495FAB29 -> Epoch: 1231006505 -> GMT : Saturday, January 3, 2009 6:15:05 PM
+    timestamp = "5C4D1DC5" # bigIndian: 495FAB29 -> Epoch: 1231006505 -> GMT : Saturday, January 3, 2009 6:15:05 PM
     return timestamp
 
 def get_size():
     # this is the size of the block ??
-    size_bits = "ffff001d"
+    size_bits = "fffff0f1"
     return size_bits
 
 def get_random_nonce_decimal(initial_value):
@@ -39,7 +39,7 @@ def get_random_nonce_decimal(initial_value):
 
 def get_nonce():
     # This is a random number
-    nonce_decimal = get_random_nonce_decimal(2083000000) # The corrrect nonce_decimal is 2083236893
+    nonce_decimal = get_random_nonce_decimal(9263) # The corrrect nonce_decimal is 2083236893
     nonce_little_indian = get_little_indian_from_decimal(nonce_decimal)
     return nonce_little_indian
 
